@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Page</title>
+    <style>
+        #loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            background: lightgray;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #completed {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            background: lightgreen;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #loading img {
+            width: 60%;
+            height: 40%;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <p>Transaction Is Being Proceed</p>
+        <img src="../static/gifs/load_an.gif" alt="Loading animation">
+    </div>
+    <div id="completed">Transaction Successfully Completed</div>
+
+    <form id="hiddenForm" action="/tran_success" method="POST" style="display:none;">
+        <input type="hidden" name="user_name" value="{{user_name}}">
+    </form>
+
+    <script>
+        window.onload = function() {
+            const loadingDiv = document.getElementById('loading');
+            const completedDiv = document.getElementById('completed');
+            const hiddenForm = document.getElementById('hiddenForm');
+
+            loadingDiv.style.display = 'block';
+            setTimeout(function() {
+                loadingDiv.style.display = 'none';
+                completedDiv.style.display = 'block';
+            }, 4000);
+
+            setTimeout(function() {
+                hiddenForm.submit();
+            }, 6000); // 6 seconds total delay
+        };
+    </script>
+</body>
+</html>

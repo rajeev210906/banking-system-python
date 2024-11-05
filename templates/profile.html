@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome User</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(to right, #000428, #004e92);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding-top: 20px;
+            color: #39FF14;
+            overflow: auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #282828;
+            box-shadow: 0 0 10px #39FF14;
+            border-bottom: 2px solid #39FF14;
+            margin-bottom: 20px;
+            width: auto;
+        }
+        .header h1 {
+            font-size: 2em; /* Smaller text size */
+            color: #39FF14;
+            text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
+            margin: 0;
+        }
+        .header button {
+            background: #282828;
+            color: #39FF14;
+            font-size: 0.8em; /* Smaller button size */
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 5px 10px; /* Adjusted padding */
+            margin-left: 20px; /* Margin to align properly with text */
+        }
+        .header button:hover {
+            background: #00FF00;
+            color: #000;
+        }
+        .content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content h1 {
+            font-size: 2em; /* Smaller text size */
+            color: #39FF14;
+            text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
+            margin: 0 0 20px 0;
+        }
+        table {
+            width: 80%;
+            max-width: 600px;
+            background: #282828;
+            border-collapse: collapse;
+            box-shadow: 0 0 15px #39FF14;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #39FF14;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #121212;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            width: 150px;
+            height: 60px;
+            background-color: #282828;
+            color: #39FF14;
+            font-size: larger;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px #666;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: translateY(-5px);
+            background-color: #00FF00;
+        }
+        button:active {
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>BANK OF RI</h1>
+        <button onclick="window.location.href = '/'">Logout</button>
+    </div>
+    <div class="content">
+        <h1>Account Info...</h1>
+        <table>
+            <tr>
+                <th>NAME</th>
+                <td>{{ user['full_name'] }}</td>
+            </tr>
+            <tr>
+                <th>Account Number</th>
+                <td>{{ user['acc_no'] }}</td>
+            </tr>
+            <tr>
+                <th>IFSC CODE</th>
+                <td>{{ user['ifsc_code'] }}</td>
+            </tr>
+            <tr>
+                <th>Mobile No</th>
+                <td>{{ user['User_ph_no'] }}</td>
+            </tr>
+            <tr>
+                <th>User Email</th>
+                <td>{{ user['User_email'] }}</td>
+            </tr>
+            <tr>
+                <th>Account Balance</th>
+                <td>{{ user['acc_bal'] }}</td>
+            </tr>
+        </table>
+        <div class="button-container">
+            <form action="/profile" method="post">
+                <input type="hidden" name="user_name" value="{{user['user_name']}}">
+                <input type="hidden" name="work" value="deposit">
+                <button type="submit">DEPOSIT MONEY</button>
+            </form>
+            <form action="/profile" method="post">
+                <input type="hidden" name="user_name" value="{{user['user_name']}}">
+                <input type="hidden" name="work" value="transfer">
+                <button type="submit">Transfer MONEY</button>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: #39FF14; /* Neon Green */
+            box-sizing: border-box;
+        }
+        center {
+            background: #282828;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #39FF14;
+            text-align: center;
+            width: 400px;
+        }
+        h2 {
+            font-size: 24px;
+            color: #39FF14;
+            text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
+        }
+        input[type="text"], input[type="number"], input[type="date"], select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #39FF14;
+            font-size: 16px;
+            background: #121212;
+            color: #39FF14;
+            box-shadow: 0 0 5px #39FF14;
+        }
+        button, input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #121212;
+            background-color: #39FF14;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 5px #39FF14;
+        }
+        button:hover, input[type="submit"]:hover {
+            background-color: #00FF00; /* Neon Lime Green */
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>Enter Card Details, {{user_name}}</h2>
+        <form action="/card_pay" method="post">
+            <input type="hidden" name="user_name" value="{{user_name}}"><br>
+            Enter Name On Card: <input type="text" name="name" required><br><br>
+            Enter Card Number: <input type="number" name="c_no" required><br><br>
+            Enter Expiry Date (DD-MM-YYYY): <input type="date" name="expiry" required><br><br>
+            Enter Card CVV: <input type="number" name="cvv"required><br><br>
+            CARD Type: <select name="c_type" id="">
+                <option value="{{c_type}}" selected>DARK CARD</option>
+            </select><br><br>
+            <input type="hidden" name="amount" value="{{amount}}"><br><br>
+            <input type="submit" value="Continue">
+        </form>
+    </center>
+</body>
+</html>

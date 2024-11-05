@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Money</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: #39FF14;
+            box-sizing: border-box;
+        }
+        .container {
+            background: #282828;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #39FF14;
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #39FF14;
+            text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
+        }
+        input[type="text"], input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #39FF14;
+            font-size: 16px;
+            background: #121212;
+            color: #39FF14;
+            box-shadow: 0 0 5px #39FF14;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #121212;
+            background-color: #39FF14;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 5px #666;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: translateY(-5px);
+            background-color: #00FF00;
+        }
+        button:active {
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Transfer Money</h1>
+        <form action="/transfer" method="post">
+            <input type="hidden" name="user_name" value="{{user['user_name']}}">
+            <label for="acc_no">Account Number:</label>
+            <input type="text" id="acc_no" name="acc_no" required><br><br>
+            <label for="ifsc">IFSC Code:</label>
+            <input type="text" id="ifsc" name="ifsc" required><br><br>
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" required><br><br>
+            <label for="user2_name">User_name:</label>
+            <input type="text" id="amount" name="user2_name" required><br><br>
+            <button type="submit">Transfer</button>
+        </form>
+    </div>
+</body>
+</html>

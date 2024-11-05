@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .message-container {
+            text-align: center;
+            background: #282828;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #39FF14;
+        }
+        .message-container h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .loading {
+            margin-top: 20px;
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #39FF14;
+            width: 40px;
+            height: 40px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <h1 id="message">Account is being created...</h1>
+        <div class="loading"></div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('message').textContent = 'Account created successfully!';
+                document.querySelector('.loading').style.display = 'none';
+            }, 3000);
+
+            setTimeout(function() {
+                window.location.href = '/login';
+            }, 5000);
+        };
+    </script>
+</body>
+</html>

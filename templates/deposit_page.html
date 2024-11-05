@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Deposit Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #000428, #004e92);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #39FF14;
+        }
+        .container {
+            background: #121212;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #39FF14;
+            text-align: center;
+            width: 400px;
+            color: #39FF14;
+        }
+        h1 {
+            font-size: 24px;
+            color: #39FF14;
+            text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
+        }
+        input[type="number"], select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #39FF14;
+            font-size: 16px;
+            background: #000;
+            color: #39FF14;
+            box-shadow: 0 0 5px #39FF14;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #000;
+            background-color: #39FF14;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 5px #666;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: translateY(-5px);
+            background-color: #00FF00;
+        }
+        button:active {
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey, {{user['user_name']}} Welcome To Bank Of RI Money Deposite Page...</h1><br><br>
+        <form action="deposit_page" method="post">
+            <input type="hidden" name="user_name" value="{{user['user_name']}}">
+            Enter Amount You Want To Add: <input type="number" name="amount" min="1" max="10000" required><br><br>
+            <label for="options">Select Payment Method:</label>
+            <select id="options" name="method">
+                <option value="dc">DEBIT CARD</option>
+                <option value="cc">CREDIT CARD</option>
+                <option value="dark_card">DARK CARD</option>
+            </select><br><br>
+            <button type="submit">Continue</button>
+        </form>
+    </div>
+</body>
+</html>

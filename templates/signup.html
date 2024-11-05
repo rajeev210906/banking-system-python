@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(to right, #000428, #004e92);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding-top: 20px;
+            color: #39FF14;
+            overflow: auto; /* Allow scrolling if needed */
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #282828;
+            box-shadow: 0 0 10px #39FF14;
+            border-bottom: 2px solid #39FF14;
+        }
+        .header button {
+            background: #282828;
+            color: #39FF14;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+        }
+        .header button:hover {
+            background: #00FF00;
+            color: #ba0000;
+        }
+        .header h3 {
+            margin: 30;
+            color: #39FF14;
+            font-size: 1.2em;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #39FF14;
+            text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
+        }
+        .form-container {
+            background: #282828;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #39FF14;
+            width: calc(100% - 20px); /* Reduce width by 20px */
+            max-width: 480px; /* Reduced max-width by 20px */
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"], input[type="tel"], input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #39FF14;
+            font-size: 16px;
+            background: #121212;
+            color: #39FF14;
+            box-shadow: 0 0 5px #39FF14;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #121212;
+            background-color: #39FF14;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 5px #666;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: translateY(-5px);
+            background-color: #00FF00;
+        }
+        button:active {
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href = '/'">Home</button>
+        <h3>This Project is under development     ...</h3>
+    </div>
+    <center>
+        <header id="header">
+            <h1>Welcome To Bank Of RI.....</h1>
+        </header>
+        <div class="form-container">
+            <form action="signup" method="post">
+                UserName: <input type="text" name="user_name" required><br><br>
+                FULL NAME: <input type="text" name="full_name" required><br><br>
+                Password: <input type="password" name="password" required><br><br>
+                PHONE No: <input type="tel" name="user_ph_no" required><br><br>
+                Email Id: <input type="email" name="user_email" required><br><br>
+                <button type="submit" value="signup">SignUp</button>
+            </form>
+        </div>
+    </center>
+</body>
+</html>

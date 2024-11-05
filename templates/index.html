@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome To Bank Of RI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(to right, #000428, #004e92);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #39FF14;
+        }
+        #header {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #39FF14;
+            text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
+        }
+        .card {
+            background-color: #282828;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #39FF14;
+            padding: 20px;
+            text-align: center;
+            size: 20px;
+            font-size: 30px;
+            width: 60%;
+            height: 20%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            margin: 0;
+            color: #e159e8;
+            text-shadow: 0 0 3px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
+        }
+        button {
+            width: 80%;
+            max-width: 300px;
+            height: 50px;
+            background-color: #282828;
+            color: #39FF14;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px #666;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        button:hover {
+            transform: translateY(-5px);
+            background-color: #00FF00;
+        }
+        button:active {
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+        center {
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <header id="header">
+            <!-- <h1>Welcome To </h1> -->
+            <div class="card">
+                <h2>Bank Of RI</h2>
+            </div>
+        </header>
+        <button id="login" onclick="OpenLogin()">Login</button><br><br>
+        <button id="signup" onclick="OpenSignUp()">Open New Account</button>
+    </center>
+    <script>
+        function OpenLogin() {
+            window.location.href = "/login";
+        }
+        function OpenSignUp() {
+            window.location.href = "/signup";
+        }
+    </script>
+</body>
+</html>
